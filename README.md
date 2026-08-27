@@ -63,10 +63,9 @@ Most skills here are thin orchestration over tools you supply yourself:
   headless against a third-party provider rather than a separate CLI.
 - **[ccstatusline](https://www.npmjs.com/package/ccstatusline)** — required only by
   `statusline/`. Run via `npx`; see `statusline/README.md`.
-- **[qlty](https://qlty.sh)** — optional; `implement_task` runs `qlty check --fix` only if it's
-  configured, and skips the step otherwise.
 
-`review-packet` needs nothing beyond bash.
+`review-packet` needs nothing beyond bash, and `implement_task` nothing beyond your agent's own
+edit and test tools.
 
 ## License
 

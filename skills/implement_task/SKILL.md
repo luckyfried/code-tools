@@ -58,12 +58,6 @@ Follow the Red-Green-Refactor cycle for each piece of functionality:
 #### 2d. Repeat
 8. Continue cycle for each behavior in your task
 
-#### 2e. Quality Check
-9. **Run code quality checks** (if qlty is configured):
-   ```bash
-   qlty check --fix
-   ```
-
 **TDD Guidelines:**
 - Write test BEFORE implementation - no exceptions
 - If you wrote code first, DELETE IT and start with test
@@ -71,7 +65,7 @@ Follow the Red-Green-Refactor cycle for each piece of functionality:
 - Use real code, minimize mocks
 - Hard to test = design problem - simplify the interface
 
-#### 2f. Choose Your Editing Tool
+#### 2e. Choose Your Editing Tool
 
 Use your agent's built-in edit tool for code changes. Read a file before editing it, and prefer
 targeted edits over rewriting a whole file — a full rewrite of a large file costs tokens and risks
@@ -148,11 +142,6 @@ status: [success | partial | blocked]
 - [ ] Each test failed first (RED), then passed (GREEN)
 - [ ] Tests run: [command] → [N] passing, [M] failing
 - [ ] Refactoring kept tests green
-
-## Code Quality (if qlty available)
-- Issues found: [N] (before fixes)
-- Issues auto-fixed: [M]
-- Remaining issues: [Brief description or "None"]
 
 ## Issues Encountered
 [Any problems hit and how they were resolved, or blockers if status is blocked]
