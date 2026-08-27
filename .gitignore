@@ -1,0 +1,47 @@
+# ---------------------------------------------------------------------------
+# Materialized agent configuration (per-machine, credential-bearing)
+#
+# These are generated locally by the toolchest profile materializer, not
+# authored here. They resolve to absolute machine paths, symlink into private
+# config trees, and carry live MCP bearer tokens. Never commit them.
+#
+# Content intended to ship lives in top-level directories (skills/, agents/,
+# rules/, hooks/, output-styles/, scripts/), not under .claude/ or .codex/.
+# ---------------------------------------------------------------------------
+.claude/
+.codex/
+.mcp.json
+
+# Agent account state and local overrides
+.claude.json
+.claude.json.backup.*
+settings.local.json
+.materialized.json
+
+# ---------------------------------------------------------------------------
+# Secrets
+# ---------------------------------------------------------------------------
+.credentials.json
+.env
+.env.*
+*.env
+providers/
+
+# ---------------------------------------------------------------------------
+# Dependencies and build output
+# ---------------------------------------------------------------------------
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ---------------------------------------------------------------------------
+# Logs, caches, OS and editor cruft
+# ---------------------------------------------------------------------------
+*.log
+.cache/
+.DS_Store
+Thumbs.db
+*.swp
