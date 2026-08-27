@@ -3,7 +3,9 @@
 Portable tooling for coding agents — skills, output styles, and statusline config that work across
 Claude Code, Codex, Cursor, and anything else reading this format.
 
-Each directory has its own `AGENTS.md`. `CLAUDE.md` is a pointer to it; edit the `AGENTS.md`.
+Each directory has its own `AGENTS.md`. Beside it, `CLAUDE.md` is one line — `@AGENTS.md` — which
+imports that file so Claude Code loads the same guidance every other agent reads. Never add content
+to a `CLAUDE.md`; edit the `AGENTS.md`.
 
 ## This repo is public
 

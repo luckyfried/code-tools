@@ -10,7 +10,7 @@ install with a configurator that understands the layout below.
 
 `skills/` holds one directory per skill, `output-styles/` one Markdown file per style, and
 `statusline/` the ccstatusline preset. Each directory carries its own `AGENTS.md` describing how to
-work in it; `CLAUDE.md` is a pointer to that file.
+work in it; `CLAUDE.md` is a one-line `@AGENTS.md` import of it.
 
 ## Designed for code-config.com
 
