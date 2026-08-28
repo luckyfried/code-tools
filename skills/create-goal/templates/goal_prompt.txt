@@ -1,0 +1,31 @@
+{{GOAL_TITLE}} — {{ONE_LINE_INTENT}}. Launched {{YYYY-MM-DD}}.
+
+This prompt is a pointer. The real state is the goal folder — read it and keep it current.
+Goal folder: thoughts/shared/goals/{{YYYY-MM-DD-slug}}/
+Spec: {{PLAN_PATH, or "GOAL.md (self-specifying)"}} — do NOT copy it into the goal folder.
+
+OBJECTIVE
+{{2-3 sentences: what to achieve and what the end state looks like. What this IS and is NOT.}}
+
+WHAT "DONE" MEANS
+{{the single measurable condition, and how it's checked. Building everything without meeting it
+is not done.}}
+
+FILES TO MAINTAIN (read GOAL.md + PHASES.md first, every session)
+- GOAL.md — mission, scope, rules, what done means. Read first; rarely edited.
+- PHASES.md — milestone tracker. Where you are = the first unticked box. Tick a box only once
+  you've seen it work, and say how you checked; fill the Outcome line when a milestone closes.
+- NOTES.md — running log. Append newest-first after every outcome, review, decision, failure.
+- DECISIONS.md — decision log. Append newest-first when one resolves (why, and what was rejected).
+- OPEN_QUESTIONS.md — unknowns; each names its owning milestone and how it gets settled.
+
+RULES
+Nothing is done until you've seen it work — code existing is not evidence that it runs.
+{{compressed project-specific rules}}.
+
+BEGIN
+1. Read GOAL.md + PHASES.md, then the top of NOTES.md, DECISIONS.md, OPEN_QUESTIONS.md.
+2. {{first action — e.g. "M0: re-check what this depends on; file the tickets, if any"}}.
+3. Work milestone by milestone per PHASES.md. Append outcomes to NOTES.md, decisions to
+   DECISIONS.md, tick PHASES boxes with a note on how you checked. Keep going until the condition
+   above is met or you hit a real blocker.

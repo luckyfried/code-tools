@@ -64,6 +64,11 @@ Most skills here are thin orchestration over tools you supply yourself:
 - **[ccstatusline](https://www.npmjs.com/package/ccstatusline)** — required only by
   `statusline/`. Run via `npx`; see `statusline/README.md`.
 
+- **A built-in `/goal` command** (Claude Code and Codex both ship one) — required only by
+  `create-goal`, which doesn't run a goal, it scaffolds one and hands back the prompt you pass to
+  `/goal`. It writes to `thoughts/shared/goals/` in the target project, and expects plans in
+  `thoughts/shared/plans/`.
+
 `review-packet` needs nothing beyond bash, and `implement_task` nothing beyond your agent's own
 edit and test tools.
 
