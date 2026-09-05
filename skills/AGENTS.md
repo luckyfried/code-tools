@@ -53,3 +53,8 @@ copied literal goes stale silently.
 
 Before committing: cross-referenced skills exist here, any `settings.json` is valid JSON that agrees
 with its `SKILL.md`, and scripts pass `bash -n` and run outside their author's home directory.
+
+The `csc` command examples in `code-config` and `code-config-doctor` name commands that ship from
+another repository, and nothing here can execute them. Anyone changing either skill checks those
+examples by hand against the installed `csc` build before committing, until an automated cross-repo
+check exists.

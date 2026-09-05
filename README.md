@@ -61,6 +61,10 @@ Most skills here are thin orchestration over tools you supply yourself:
   drive.
 - **A z.ai or Kimi endpoint** (plus credentials) — `fanout-zai` and `fanout-kimi` run `claude`
   headless against a third-party provider rather than a separate CLI.
+- **The `csc` CLI**, which ships with Code Config — `code-config` and `code-config-doctor` drive it
+  and treat it as their only implementation. Get it from
+  [code-config.com](https://code-config.com); the download page installs `csc` alongside the
+  launcher.
 - **[ccstatusline](https://www.npmjs.com/package/ccstatusline)** — required only by
   `statusline/`. Run via `npx`; see `statusline/README.md`.
 
