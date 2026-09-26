@@ -6,7 +6,7 @@
 # config trees, and carry live MCP bearer tokens. Never commit them.
 #
 # Content intended to ship lives in top-level directories (skills/, agents/,
-# rules/, hooks/, output-styles/, scripts/), not under .claude/ or .codex/.
+# rules/, hooks/, output-styles/, mcp-configs/, scripts/), not under .claude/ or .codex/.
 # ---------------------------------------------------------------------------
 .claude/
 .codex/
