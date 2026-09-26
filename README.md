@@ -111,6 +111,19 @@ Most skills here are thin orchestration over tools you supply yourself:
   - **pmndrs-docs** serves current documentation for React Three Fiber, Drei, Zustand and
     React Postprocessing. Hosted by Poimandres; nothing to install.
 
+- **Unity 6** — required by the `unity-*` skills. They pair with Unity's official skills
+  ([Unity-Technologies/skills](https://github.com/Unity-Technologies/skills), also shipped as the
+  `unity` plugin for Claude Code and Codex) and name them where the topics meet, such as `unity-cli`,
+  `ui-uitk` and `setup-multiplayer-services`. Also paired: `unity-ecs-patterns` from
+  [wshobson/agents](https://github.com/wshobson/agents) and `renderdoc-gpu-debug` from
+  [rudybear/renderdoc-skill](https://github.com/rudybear/renderdoc-skill). The editor connection is
+  Unity's own MCP server (`unity mcp` in the [Unity CLI](https://docs.unity.com/en-us/unity-cli/unity-cli));
+  `unity-compile-and-test` covers setting it up.
+- **Adapted skills** — `unity-2d`, `unity-addressables`, `unity-animation`, `unity-editor-tools`,
+  `unity-multiplayer`, `unity-perf-audit`, `unity-save`, `unity-shader-gen` and `unity-test` are
+  adapted from [JulianKerignard/Unity-Skills](https://github.com/JulianKerignard/Unity-Skills) under
+  its MIT license, which each folder carries in its own `LICENSE`.
+
 `review-packet` needs nothing beyond bash, and `implement_task` nothing beyond your agent's own
 edit and test tools.
 
