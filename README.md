@@ -92,6 +92,25 @@ Most skills here are thin orchestration over tools you supply yourself:
     projects that use Tracy. Build Tracy's Python bindings, then start the server from your Tracy
     checkout with `extra/mcp/start_mcp.sh`; it listens on `http://127.0.0.1:47380/mcp`.
 
+- **Three.js** — `threejs-current-api` and `threejs-visual-check` pair with community skills
+  that cover the rest of the library, and name them where the topics meet:
+  [CloudAI-X/threejs-skills](https://github.com/CloudAI-X/threejs-skills),
+  [OpenAEC-Foundation/Three.js-Claude-Skill-Package](https://github.com/OpenAEC-Foundation/Three.js-Claude-Skill-Package),
+  [EnzeD/r3f-skills](https://github.com/EnzeD/r3f-skills),
+  [dgreenheck/webgpu-claude-skill](https://github.com/dgreenheck/webgpu-claude-skill),
+  [linegel/threejs-complete-set-of-skill](https://github.com/linegel/threejs-complete-set-of-skill),
+  [majidmanzarpour/threejs-game-skills](https://github.com/majidmanzarpour/threejs-game-skills)
+  and the `gltf-transform` skill from [rawwerks/VibeCAD](https://github.com/rawwerks/VibeCAD).
+- **`mcp-configs/threejs.json`** declares three servers used by `threejs-visual-check` and the
+  React Three Fiber skills:
+  - **threejs-devtools** reads and edits a running Three.js or React Three Fiber scene: objects,
+    materials, shaders, draw calls, memory. Runs through `npx` (Node.js required) and opens a
+    browser against your dev server.
+  - **chrome-devtools** is Google's Chrome DevTools server: screenshots, console messages,
+    performance traces. Runs through `npx`; needs Chrome.
+  - **pmndrs-docs** serves current documentation for React Three Fiber, Drei, Zustand and
+    React Postprocessing. Hosted by Poimandres; nothing to install.
+
 `review-packet` needs nothing beyond bash, and `implement_task` nothing beyond your agent's own
 edit and test tools.
 
