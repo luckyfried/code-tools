@@ -22,8 +22,8 @@ server exposes only three meta-tools: `list_toolsets`, `describe_toolset`, `call
 1. Call `list_toolsets` first and look for PCG-related toolsets. Then `describe_toolset` on each
    candidate to get the exact tool names and argument schemas. Never guess a tool name or
    argument; use only what `describe_toolset` returned.
-2. Invoke tools through `call_tool`. Calls run serially on the game thread, so do not issue
-   overlapping calls.
+2. Invoke tools through `call_tool`. The editor handles MCP requests one after another, so wait
+   for each result before sending the next.
 3. After every edit (add node, connect pins, change a setting, assign a graph, generate), read the
    state back with the toolset's read/inspect tools and confirm the change landed before the next
    edit. Treat an unconfirmed edit as not done.
@@ -200,7 +200,7 @@ deprecated; use Biome Texture volumes as in the sample level.
   - Passing large-grid data into a small grid duplicates it into every cell; remove copies with
     **Cull Points Outside Actor Bounds**.
   - Subgraphs use the grid size of their input or parent graph.
-- **World Partition**: output inherits the PCG actor's Data Layer and HLOD Layer. Spawn Actor and
+- **World Partition**: generated content takes its Data Layer and HLOD Layer from the PCG actor. Spawn Actor and
   Create Target Actor have Data Layer and HLOD source settings (Self, references, template).
 - **Get Actor Data** reading another PCG component's output can target specific grids (`Get Data
   On All Grids`, `Allowed Grids`) and `Expected Pins`.

@@ -22,7 +22,7 @@ tool-search mode it exposes only three meta-tools: `list_toolsets`, `describe_to
    actors, assets, materials, or Python.
 2. Call `describe_toolset` on the candidates to get the exact tool names and parameter schemas.
 3. Invoke through `call_tool` with the names exactly as described. Never guess a toolset or tool name.
-4. Make one call at a time. The server runs tool calls serially on the game thread, so don't overlap them.
+4. Make one call at a time. The editor handles MCP requests one after another, so wait for each result before sending the next.
 5. If no toolset covers the task, use the Editor Python in `references/editor-python.md` (if a toolset can
    run Python) or give the user the manual editor steps.
 
