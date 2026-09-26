@@ -72,6 +72,16 @@ A clean compile with Console errors still in it is not clean. Errors from before
 
 The full Unity CLI command reference is Unity's own `unity-cli` agent skill (`unity skill show` prints it; `unity skill install <client>` installs it). Use it for commands and flags not covered here, and `unity <command> --help` as the authority for the installed version.
 
+### Unity's official skills
+
+Unity publishes its own agent skills (UI, 2D and tilemaps, URP, multiplayer and live services, packages, and more) under the Unity Companion License. They are not bundled with these skills; each user installs them from Unity:
+
+- Claude Code: `claude plugin marketplace add Unity-Technologies/unity-agent-plugin`, then `claude plugin install unity@unity-agent-plugin` (inside a session: `/plugin marketplace add …` and `/plugin install …`).
+- Codex: `codex plugin marketplace add Unity-Technologies/unity-agent-plugin`, then `codex plugin add unity@unity-agent-plugin`.
+- The `unity-cli` skill alone: `unity skill install <client>`.
+
+Other skills here name Unity's skills (`unity-cli`, `ui-uitk`, `setup-multiplayer-services` and so on) where the topics meet. When one is not installed and the task needs it, tell the user how to install it rather than guessing its content.
+
 ## Path B: editor closed (headless batch mode)
 
 ### B1. Find the editor

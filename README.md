@@ -111,10 +111,11 @@ Most skills here are thin orchestration over tools you supply yourself:
   - **pmndrs-docs** serves current documentation for React Three Fiber, Drei, Zustand and
     React Postprocessing. Hosted by Poimandres; nothing to install.
 
-- **Unity 6** — required by the `unity-*` skills. They pair with Unity's official skills
-  ([Unity-Technologies/skills](https://github.com/Unity-Technologies/skills), also shipped as the
-  `unity` plugin for Claude Code and Codex) and name them where the topics meet, such as `unity-cli`,
-  `ui-uitk` and `setup-multiplayer-services`. Also paired: `unity-ecs-patterns` from
+- **Unity 6** — required by the `unity-*` skills. They pair with Unity's official skills and name
+  them where the topics meet, such as `unity-cli`, `ui-uitk` and `setup-multiplayer-services`.
+  Unity's skills are under the Unity Companion License and are not included here; install them from
+  Unity with its [`unity` plugin](https://github.com/Unity-Technologies/unity-agent-plugin) for
+  Claude Code or Codex (`unity-compile-and-test` lists the commands). Also paired: `unity-ecs-patterns` from
   [wshobson/agents](https://github.com/wshobson/agents) and `renderdoc-gpu-debug` from
   [rudybear/renderdoc-skill](https://github.com/rudybear/renderdoc-skill). The editor connection is
   Unity's own MCP server (`unity mcp` in the [Unity CLI](https://docs.unity.com/en-us/unity-cli/unity-cli));
