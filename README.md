@@ -94,10 +94,7 @@ Most skills here are thin orchestration over tools you supply yourself:
 
 - **Three.js** — `threejs-current-api` and `threejs-visual-check` pair with community skills
   that cover the rest of the library, and name them where the topics meet:
-  [CloudAI-X/threejs-skills](https://github.com/CloudAI-X/threejs-skills),
   [OpenAEC-Foundation/Three.js-Claude-Skill-Package](https://github.com/OpenAEC-Foundation/Three.js-Claude-Skill-Package),
-  [EnzeD/r3f-skills](https://github.com/EnzeD/r3f-skills),
-  [dgreenheck/webgpu-claude-skill](https://github.com/dgreenheck/webgpu-claude-skill),
   [linegel/threejs-complete-set-of-skill](https://github.com/linegel/threejs-complete-set-of-skill),
   [majidmanzarpour/threejs-game-skills](https://github.com/majidmanzarpour/threejs-game-skills)
   and the `gltf-transform` skill from [rawwerks/VibeCAD](https://github.com/rawwerks/VibeCAD).
@@ -120,10 +117,11 @@ Most skills here are thin orchestration over tools you supply yourself:
   [rudybear/renderdoc-skill](https://github.com/rudybear/renderdoc-skill). The editor connection is
   Unity's own MCP server (`unity mcp` in the [Unity CLI](https://docs.unity.com/en-us/unity-cli/unity-cli));
   `unity-compile-and-test` covers setting it up.
-- **Adapted skills** — `unity-2d`, `unity-addressables`, `unity-animation`, `unity-editor-tools`,
-  `unity-multiplayer`, `unity-perf-audit`, `unity-save`, `unity-shader-gen` and `unity-test` are
-  adapted from [JulianKerignard/Unity-Skills](https://github.com/JulianKerignard/Unity-Skills) under
-  its MIT license, which each folder carries in its own `LICENSE`.
+- **Unity topics covered upstream** — 2D, Addressables, animation, editor tools, multiplayer,
+  performance audits, saving, shaders and tests come from
+  [JulianKerignard/Unity-Skills](https://github.com/JulianKerignard/Unity-Skills) (MIT): install
+  `unity-2d`, `unity-addressables`, `unity-animation`, `unity-editor-tools`, `unity-multiplayer`,
+  `unity-perf-audit`, `unity-save`, `unity-shader-gen` and `unity-test` from there.
 
 - **Blender 5.x** — required by the `blender-*` skills. The editor connection is Blender's official
   MCP server ([Blender Lab](https://www.blender.org/lab/mcp-server/), also the Blender connector in
@@ -132,9 +130,9 @@ Most skills here are thin orchestration over tools you supply yourself:
   [ra100/blender-claude-plugin](https://github.com/ra100/blender-claude-plugin),
   `blender-image-to-3d` from [donth77/blender-game-skills](https://github.com/donth77/blender-game-skills)
   and the `gltf-transform` skill from [rawwerks/VibeCAD](https://github.com/rawwerks/VibeCAD).
-- **Adapted skills** — `blender-animation-rigging` and `blender-compositing-nodes` are adapted from
-  [ra100/blender-claude-plugin](https://github.com/ra100/blender-claude-plugin) under its MIT
-  license, which each folder carries in its own `LICENSE`.
+- **Blender topics covered upstream** — rigging and animation, and compositing nodes, come from
+  [ra100/blender-claude-plugin](https://github.com/ra100/blender-claude-plugin) (MIT): install
+  `blender-animation-rigging` and `blender-compositing-nodes` from there.
 
 - **ComfyUI** — the `comfyui-*` skills drive ComfyUI through Comfy Org's official MCP servers:
   the local [comfy-mcp](https://github.com/Comfy-Org/comfy-mcp) (install with
@@ -145,9 +143,9 @@ Most skills here are thin orchestration over tools you supply yourself:
   and the `comfy-cloud` commands from [Comfy-Org/comfy-skills](https://github.com/Comfy-Org/comfy-skills).
 - **`mcp-configs/comfyui.json`** declares **comfy-cloud**, Comfy Org's hosted server. It signs in
   with your Comfy account; searching is free and generating needs a Comfy Cloud subscription.
-- **Adapted skills** — `comfyui-api`, `comfyui-prompt-engineer` and `comfyui-troubleshooter` are
-  adapted from [MCKRUZ/ComfyUI-Expert](https://github.com/MCKRUZ/ComfyUI-Expert) under its MIT
-  license, which each folder carries in its own `LICENSE`.
+- **ComfyUI topics covered upstream** — the HTTP API, prompt writing and troubleshooting come from
+  [MCKRUZ/ComfyUI-Expert](https://github.com/MCKRUZ/ComfyUI-Expert) (MIT): install `comfyui-api`,
+  `comfyui-prompt-engineer` and `comfyui-troubleshooter` from there.
 
 `review-packet` needs nothing beyond bash, and `implement_task` nothing beyond your agent's own
 edit and test tools.
