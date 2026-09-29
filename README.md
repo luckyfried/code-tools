@@ -8,8 +8,8 @@ install with a configurator that understands the layout below.
 
 ## Layout
 
-`skills/` holds one directory per skill, `output-styles/` one Markdown file per style, and
-`statusline/` the ccstatusline preset. Each directory carries its own `AGENTS.md` describing how to
+`skills/` holds one directory per skill, `output-styles/` one Markdown file per style,
+`mcp-configs/` one JSON file per group of MCP servers, and `statusline/` the ccstatusline preset. Each directory carries its own `AGENTS.md` describing how to
 work in it; `CLAUDE.md` is a one-line `@AGENTS.md` import of it.
 
 ## Designed for code-config.com
@@ -72,6 +72,80 @@ Most skills here are thin orchestration over tools you supply yourself:
   `create-goal`, which doesn't run a goal, it scaffolds one and hands back the prompt you pass to
   `/goal`. It writes to `thoughts/shared/goals/` in the target project, and expects plans in
   `thoughts/shared/plans/`.
+
+- **Unreal Engine 5.8** — required by the `ue-*` skills. They pair with community skills that
+  cover the rest of the engine, and name them where the topics meet:
+  [quodsoler/unreal-engine-skills](https://github.com/quodsoler/unreal-engine-skills),
+  [JetBrains/rider-skills](https://github.com/JetBrains/rider-skills), the `unreal-mcp`,
+  `create-toolset` and `unreal-skill` skills from
+  [EpicGames/unreal-engine-skills-for-claude-code-plugin](https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin),
+  `unreal-pcg-python` from [maystudios/claude-skills](https://github.com/maystudios/claude-skills),
+  `renderdoc-gpu-debug` from [rudybear/renderdoc-skill](https://github.com/rudybear/renderdoc-skill)
+  and `cli-anything-unrealinsights` from [HKUDS/cli-anything](https://github.com/HKUDS/cli-anything).
+  Each `ue-*` skill works without them.
+- **`mcp-configs/unreal-profiling.json`** declares two profiling servers used by
+  `ue-profiling-workflow`:
+  - **ue-trace** reads Unreal Insights `.utrace` files and reports slow functions, spike frames and
+    frame-time percentiles. It runs through `npx` (Node.js required) and downloads its analysis
+    program on first use. Windows and Linux; no macOS build yet.
+  - **tracy** connects to the [Tracy](https://github.com/wolfpld/tracy) profiler's MCP server, for
+    projects that use Tracy. Build Tracy's Python bindings, then start the server from your Tracy
+    checkout with `extra/mcp/start_mcp.sh`; it listens on `http://127.0.0.1:47380/mcp`.
+
+- **Three.js** — `threejs-current-api` and `threejs-visual-check` pair with community skills
+  that cover the rest of the library, and name them where the topics meet:
+  [OpenAEC-Foundation/Three.js-Claude-Skill-Package](https://github.com/OpenAEC-Foundation/Three.js-Claude-Skill-Package),
+  [linegel/threejs-complete-set-of-skill](https://github.com/linegel/threejs-complete-set-of-skill),
+  [majidmanzarpour/threejs-game-skills](https://github.com/majidmanzarpour/threejs-game-skills)
+  and the `gltf-transform` skill from [rawwerks/VibeCAD](https://github.com/rawwerks/VibeCAD).
+- **`mcp-configs/threejs.json`** declares three servers used by `threejs-visual-check` and the
+  React Three Fiber skills:
+  - **threejs-devtools** reads and edits a running Three.js or React Three Fiber scene: objects,
+    materials, shaders, draw calls, memory. Runs through `npx` (Node.js required) and opens a
+    browser against your dev server.
+  - **chrome-devtools** is Google's Chrome DevTools server: screenshots, console messages,
+    performance traces. Runs through `npx`; needs Chrome.
+  - **pmndrs-docs** serves current documentation for React Three Fiber, Drei, Zustand and
+    React Postprocessing. Hosted by Poimandres; nothing to install.
+
+- **Unity 6** — required by the `unity-*` skills. They pair with Unity's official skills and name
+  them where the topics meet, such as `unity-cli`, `ui-uitk` and `setup-multiplayer-services`.
+  Unity's skills are under the Unity Companion License and are not included here; install them from
+  Unity with its [`unity` plugin](https://github.com/Unity-Technologies/unity-agent-plugin) for
+  Claude Code or Codex (`unity-compile-and-test` lists the commands). Also paired: `unity-ecs-patterns` from
+  [wshobson/agents](https://github.com/wshobson/agents) and `renderdoc-gpu-debug` from
+  [rudybear/renderdoc-skill](https://github.com/rudybear/renderdoc-skill). The editor connection is
+  Unity's own MCP server (`unity mcp` in the [Unity CLI](https://docs.unity.com/en-us/unity-cli/unity-cli));
+  `unity-compile-and-test` covers setting it up.
+- **Unity topics covered upstream** — 2D, Addressables, animation, editor tools, multiplayer,
+  performance audits, saving, shaders and tests come from
+  [JulianKerignard/Unity-Skills](https://github.com/JulianKerignard/Unity-Skills) (MIT): install
+  `unity-2d`, `unity-addressables`, `unity-animation`, `unity-editor-tools`, `unity-multiplayer`,
+  `unity-perf-audit`, `unity-save`, `unity-shader-gen` and `unity-test` from there.
+
+- **Blender 5.x** — required by the `blender-*` skills. The editor connection is Blender's official
+  MCP server ([Blender Lab](https://www.blender.org/lab/mcp-server/), also the Blender connector in
+  Claude's connector directory; Blender 5.1 or newer). `blender-verify` covers setting it up and
+  a headless `blender -b` fallback. The skills pair with
+  [ra100/blender-claude-plugin](https://github.com/ra100/blender-claude-plugin),
+  `blender-image-to-3d` from [donth77/blender-game-skills](https://github.com/donth77/blender-game-skills)
+  and the `gltf-transform` skill from [rawwerks/VibeCAD](https://github.com/rawwerks/VibeCAD).
+- **Blender topics covered upstream** — rigging and animation, and compositing nodes, come from
+  [ra100/blender-claude-plugin](https://github.com/ra100/blender-claude-plugin) (MIT): install
+  `blender-animation-rigging` and `blender-compositing-nodes` from there.
+
+- **ComfyUI** — the `comfyui-*` skills drive ComfyUI through Comfy Org's official MCP servers:
+  the local [comfy-mcp](https://github.com/Comfy-Org/comfy-mcp) (install with
+  `pip install comfy-mcp "comfy-cli>=1.14.0"`, then start ComfyUI with `comfy launch`) or Comfy
+  Cloud. `comfyui-setup-and-verify` covers both. They pair with
+  [jtydhr88/comfyui-custom-node-skills](https://github.com/jtydhr88/comfyui-custom-node-skills),
+  `comfyui-prompt-interview` from [MCKRUZ/ComfyUI-Expert](https://github.com/MCKRUZ/ComfyUI-Expert)
+  and the `comfy-cloud` commands from [Comfy-Org/comfy-skills](https://github.com/Comfy-Org/comfy-skills).
+- **`mcp-configs/comfyui.json`** declares **comfy-cloud**, Comfy Org's hosted server. It signs in
+  with your Comfy account; searching is free and generating needs a Comfy Cloud subscription.
+- **ComfyUI topics covered upstream** — the HTTP API, prompt writing and troubleshooting come from
+  [MCKRUZ/ComfyUI-Expert](https://github.com/MCKRUZ/ComfyUI-Expert) (MIT): install `comfyui-api`,
+  `comfyui-prompt-engineer` and `comfyui-troubleshooter` from there.
 
 `review-packet` needs nothing beyond bash, and `implement_task` nothing beyond your agent's own
 edit and test tools.
