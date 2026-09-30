@@ -8,8 +8,8 @@ install with a configurator that understands the layout below.
 
 ## Layout
 
-`skills/` holds one directory per skill, `output-styles/` one Markdown file per style, and
-`statusline/` the ccstatusline preset. Each directory carries its own `AGENTS.md` describing how to
+`skills/` holds one directory per skill, `output-styles/` one Markdown file per style,
+`mcp-configs/` one JSON file per group of MCP servers, and `statusline/` the ccstatusline preset. Each directory carries its own `AGENTS.md` describing how to
 work in it; `CLAUDE.md` is a one-line `@AGENTS.md` import of it.
 
 ## Designed for code-config.com
@@ -72,6 +72,44 @@ Most skills here are thin orchestration over tools you supply yourself:
   `create-goal`, which doesn't run a goal, it scaffolds one and hands back the prompt you pass to
   `/goal`. It writes to `thoughts/shared/goals/` in the target project, and expects plans in
   `thoughts/shared/plans/`.
+
+- **Unreal Engine 5.8** — required by the `ue-*` skills. They pair with community skills that
+  cover the rest of the engine, and name them where the topics meet:
+  [quodsoler/unreal-engine-skills](https://github.com/quodsoler/unreal-engine-skills),
+  [JetBrains/rider-skills](https://github.com/JetBrains/rider-skills), the `unreal-mcp`,
+  `create-toolset` and `unreal-skill` skills from
+  [EpicGames/unreal-engine-skills-for-claude-code-plugin](https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin),
+  `unreal-pcg-python` from [maystudios/claude-skills](https://github.com/maystudios/claude-skills),
+  `renderdoc-gpu-debug` from [rudybear/renderdoc-skill](https://github.com/rudybear/renderdoc-skill)
+  and `cli-anything-unrealinsights` from [HKUDS/cli-anything](https://github.com/HKUDS/cli-anything).
+  Each `ue-*` skill works without them.
+- **`mcp-configs/unreal-profiling.json`** declares two profiling servers used by
+  `ue-profiling-workflow`:
+  - **ue-trace** reads Unreal Insights `.utrace` files and reports slow functions, spike frames and
+    frame-time percentiles. It runs through `npx` (Node.js required) and downloads its analysis
+    program on first use. Windows and Linux; no macOS build yet.
+  - **tracy** connects to the [Tracy](https://github.com/wolfpld/tracy) profiler's MCP server, for
+    projects that use Tracy. Build Tracy's Python bindings, then start the server from your Tracy
+    checkout with `extra/mcp/start_mcp.sh`; it listens on `http://127.0.0.1:47380/mcp`.
+
+- **Three.js** — `threejs-current-api` and `threejs-visual-check` pair with community skills
+  that cover the rest of the library, and name them where the topics meet:
+  [CloudAI-X/threejs-skills](https://github.com/CloudAI-X/threejs-skills),
+  [OpenAEC-Foundation/Three.js-Claude-Skill-Package](https://github.com/OpenAEC-Foundation/Three.js-Claude-Skill-Package),
+  [EnzeD/r3f-skills](https://github.com/EnzeD/r3f-skills),
+  [dgreenheck/webgpu-claude-skill](https://github.com/dgreenheck/webgpu-claude-skill),
+  [linegel/threejs-complete-set-of-skill](https://github.com/linegel/threejs-complete-set-of-skill),
+  [majidmanzarpour/threejs-game-skills](https://github.com/majidmanzarpour/threejs-game-skills)
+  and the `gltf-transform` skill from [rawwerks/VibeCAD](https://github.com/rawwerks/VibeCAD).
+- **`mcp-configs/threejs.json`** declares three servers used by `threejs-visual-check` and the
+  React Three Fiber skills:
+  - **threejs-devtools** reads and edits a running Three.js or React Three Fiber scene: objects,
+    materials, shaders, draw calls, memory. Runs through `npx` (Node.js required) and opens a
+    browser against your dev server.
+  - **chrome-devtools** is Google's Chrome DevTools server: screenshots, console messages,
+    performance traces. Runs through `npx`; needs Chrome.
+  - **pmndrs-docs** serves current documentation for React Three Fiber, Drei, Zustand and
+    React Postprocessing. Hosted by Poimandres; nothing to install.
 
 `review-packet` needs nothing beyond bash, and `implement_task` nothing beyond your agent's own
 edit and test tools.

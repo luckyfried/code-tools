@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "ue-trace": {
+      "command": "npx",
+      "args": ["-y", "@mtuska/ue-trace-mcp@0.5.2"]
+    },
+    "tracy": {
+      "type": "http",
+      "url": "http://127.0.0.1:47380/mcp"
+    }
+  }
+}
