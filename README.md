@@ -136,6 +136,19 @@ Most skills here are thin orchestration over tools you supply yourself:
   [ra100/blender-claude-plugin](https://github.com/ra100/blender-claude-plugin) under its MIT
   license, which each folder carries in its own `LICENSE`.
 
+- **ComfyUI** — the `comfyui-*` skills drive ComfyUI through Comfy Org's official MCP servers:
+  the local [comfy-mcp](https://github.com/Comfy-Org/comfy-mcp) (install with
+  `pip install comfy-mcp "comfy-cli>=1.14.0"`, then start ComfyUI with `comfy launch`) or Comfy
+  Cloud. `comfyui-setup-and-verify` covers both. They pair with
+  [jtydhr88/comfyui-custom-node-skills](https://github.com/jtydhr88/comfyui-custom-node-skills),
+  `comfyui-prompt-interview` from [MCKRUZ/ComfyUI-Expert](https://github.com/MCKRUZ/ComfyUI-Expert)
+  and the `comfy-cloud` commands from [Comfy-Org/comfy-skills](https://github.com/Comfy-Org/comfy-skills).
+- **`mcp-configs/comfyui.json`** declares **comfy-cloud**, Comfy Org's hosted server. It signs in
+  with your Comfy account; searching is free and generating needs a Comfy Cloud subscription.
+- **Adapted skills** — `comfyui-api`, `comfyui-prompt-engineer` and `comfyui-troubleshooter` are
+  adapted from [MCKRUZ/ComfyUI-Expert](https://github.com/MCKRUZ/ComfyUI-Expert) under its MIT
+  license, which each folder carries in its own `LICENSE`.
+
 `review-packet` needs nothing beyond bash, and `implement_task` nothing beyond your agent's own
 edit and test tools.
 
