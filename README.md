@@ -125,6 +125,17 @@ Most skills here are thin orchestration over tools you supply yourself:
   adapted from [JulianKerignard/Unity-Skills](https://github.com/JulianKerignard/Unity-Skills) under
   its MIT license, which each folder carries in its own `LICENSE`.
 
+- **Blender 5.x** — required by the `blender-*` skills. The editor connection is Blender's official
+  MCP server ([Blender Lab](https://www.blender.org/lab/mcp-server/), also the Blender connector in
+  Claude's connector directory; Blender 5.1 or newer). `blender-verify` covers setting it up and
+  a headless `blender -b` fallback. The skills pair with
+  [ra100/blender-claude-plugin](https://github.com/ra100/blender-claude-plugin),
+  `blender-image-to-3d` from [donth77/blender-game-skills](https://github.com/donth77/blender-game-skills)
+  and the `gltf-transform` skill from [rawwerks/VibeCAD](https://github.com/rawwerks/VibeCAD).
+- **Adapted skills** — `blender-animation-rigging` and `blender-compositing-nodes` are adapted from
+  [ra100/blender-claude-plugin](https://github.com/ra100/blender-claude-plugin) under its MIT
+  license, which each folder carries in its own `LICENSE`.
+
 `review-packet` needs nothing beyond bash, and `implement_task` nothing beyond your agent's own
 edit and test tools.
 
