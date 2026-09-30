@@ -111,6 +111,31 @@ Most skills here are thin orchestration over tools you supply yourself:
   - **pmndrs-docs** serves current documentation for React Three Fiber, Drei, Zustand and
     React Postprocessing. Hosted by Poimandres; nothing to install.
 
+- **Unity 6** — required by the `unity-*` skills. They pair with Unity's official skills and name
+  them where the topics meet, such as `unity-cli`, `ui-uitk` and `setup-multiplayer-services`.
+  Unity's skills are under the Unity Companion License and are not included here; install them from
+  Unity with its [`unity` plugin](https://github.com/Unity-Technologies/unity-agent-plugin) for
+  Claude Code or Codex (`unity-compile-and-test` lists the commands). Also paired: `unity-ecs-patterns` from
+  [wshobson/agents](https://github.com/wshobson/agents) and `renderdoc-gpu-debug` from
+  [rudybear/renderdoc-skill](https://github.com/rudybear/renderdoc-skill). The editor connection is
+  Unity's own MCP server (`unity mcp` in the [Unity CLI](https://docs.unity.com/en-us/unity-cli/unity-cli));
+  `unity-compile-and-test` covers setting it up.
+- **Adapted skills** — `unity-2d`, `unity-addressables`, `unity-animation`, `unity-editor-tools`,
+  `unity-multiplayer`, `unity-perf-audit`, `unity-save`, `unity-shader-gen` and `unity-test` are
+  adapted from [JulianKerignard/Unity-Skills](https://github.com/JulianKerignard/Unity-Skills) under
+  its MIT license, which each folder carries in its own `LICENSE`.
+
+- **Blender 5.x** — required by the `blender-*` skills. The editor connection is Blender's official
+  MCP server ([Blender Lab](https://www.blender.org/lab/mcp-server/), also the Blender connector in
+  Claude's connector directory; Blender 5.1 or newer). `blender-verify` covers setting it up and
+  a headless `blender -b` fallback. The skills pair with
+  [ra100/blender-claude-plugin](https://github.com/ra100/blender-claude-plugin),
+  `blender-image-to-3d` from [donth77/blender-game-skills](https://github.com/donth77/blender-game-skills)
+  and the `gltf-transform` skill from [rawwerks/VibeCAD](https://github.com/rawwerks/VibeCAD).
+- **Adapted skills** — `blender-animation-rigging` and `blender-compositing-nodes` are adapted from
+  [ra100/blender-claude-plugin](https://github.com/ra100/blender-claude-plugin) under its MIT
+  license, which each folder carries in its own `LICENSE`.
+
 `review-packet` needs nothing beyond bash, and `implement_task` nothing beyond your agent's own
 edit and test tools.
 
