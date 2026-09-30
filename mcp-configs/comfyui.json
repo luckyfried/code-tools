@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "comfy-cloud": {
-      "type": "http",
-      "url": "https://cloud.comfy.org/mcp"
-    }
-  }
-}
